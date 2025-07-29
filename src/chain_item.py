@@ -5,7 +5,7 @@ class ChainItem:
     def __init__(self):
         self.head = None
 
-    def add_bucket(self, bucket: Item):
+    def add_item(self, bucket: Item):
         new_bucket = bucket
         if not self.head:
             self.head = new_bucket
@@ -15,7 +15,7 @@ class ChainItem:
             current = current.next
         current.next = new_bucket
 
-    def get_bucket(self, key):
+    def get_item(self, key):
         head = self.head
         while head:
             if head.hash_object == hash(key):
